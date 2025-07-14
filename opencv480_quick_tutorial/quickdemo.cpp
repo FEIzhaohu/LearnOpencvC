@@ -63,8 +63,34 @@ void QuickDemo::operators_Demo(Mat &image) {
 	imshow("加法操作", dst);
 }
 
-void QuickDemo::tracking_bar_demo(Mat &iamge) {
+struct TrackbarData {
+	Mat src;
+	Mat dst;
+};
+static void on_track(int pos, void* userdata) {
+	TrackbarData* data = (TrackbarData*)userdata;
+	Scalar m(pos, pos, pos);
+	add(data->src, m, data->dst);
+	imshow("亮度调整", data->dst);
+}
+void QuickDemo::tracking_bar_demo(Mat &image) {
+	namedWindow("亮度调整", WINDOW_FREERATIO);
+	int max_value = 100;
+	TrackbarData* data = new TrackbarData();
+	data->src = image;
+	data->dst = Mat::zeros(image.size(), image.type());
+	//int lightness = 50;
 
+	createTrackbar("Value Bar:", "亮度调整", nullptr, max_value, on_track, (void*)data);
+	setTrackbarPos("Value Bar:", "亮度调整", 50);
+	on_track(50, data);
+}
+void QuickDemo::key_demo(Mat &image) {
+	Mat dst;
+	while (true) {
+		char c = waitKey(10);
+		std::cout << c << std::endl;
+	}	
 }
 
 	

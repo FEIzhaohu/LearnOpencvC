@@ -1,0 +1,62 @@
+# ==============================
+# Visual Studio 生成的文件
+# ==============================
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.o
+*.tlog
+*.lastbuildstate
+*.idb
+*.ipch
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.cache
+*.vc.db
+*.vc.vc.db
+
+# Visual Studio 目录
+bin/
+obj/
+Debug/
+Release/
+x64/
+Win32/
+ipch/
+.vs/
+
+# ==============================
+# C++ 编译生成的文件
+# ==============================
+*.o
+*.a
+*.so
+*.dylib
+*.la
+*.lo
+
+# ==============================
+# OpenCV 相关（可选）
+# ==============================
+# 如果 OpenCV 的 .dll 放在项目目录下（不推荐）
+lib/
+x64/
+
+# OpenCV 示例可能生成的
+opencv_*.exe
+
+# ==============================
+# CMake（如果使用）
+# ==============================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+*_autogen/
